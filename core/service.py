@@ -4,6 +4,7 @@ from core import handlers
 from utils import logger
 
 
+
 def excute_task():
     process_list = []
     urls, file_paths = utils.get_urls_and_files()

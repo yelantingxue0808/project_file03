@@ -4,7 +4,7 @@ from lxml import etree
 from config import http_settings
 from utils import logger
 from utils import utils
-from save_data import dao
+from dao import save_data
 
 
 async def fetch_page(url):
@@ -41,4 +41,4 @@ def task_process(url_group, filename):
     每个进程执行的任务
     """
     data = asyncio.run(utils.batch_fetch(url_group))
-    dao.save_to_excel(data, filename)
+    save_data.save_to_excel(data, filename)
